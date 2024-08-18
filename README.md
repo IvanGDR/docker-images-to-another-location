@@ -45,14 +45,16 @@ Edit /etc/docker/daemon.json (if it doesn't exist, create it). In recent version
   "data-root": "/new/path/to/docker-data"
 }
 ```
-
+Start Docker
+```
 sudo systemctl start docker
-
+```
 
 To confirm that Docker was reconfigured:
-
+```
 docker info|grep "Docker Root Dir"
-
+```
 Finally, clean old docker data directory
-
+```
 sudo rm -r /var/lib/docker
+```
