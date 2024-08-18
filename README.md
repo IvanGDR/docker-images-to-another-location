@@ -30,8 +30,7 @@ sudo mv /var/lib/docker/ /path/to/new/docker/
 or
 sudo cp -r /var/lib/docker/. /opt/docker-data
 
-
-In recent version (>=17.03):
+Edit /etc/docker/daemon.json (if it doesn't exist, create it). In recent version (>=17.03):
 {
   "data-root": "/new/path/to/docker-data"
 }
