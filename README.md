@@ -23,22 +23,28 @@ drwx-----x 25 root root 4096 Aug 18 19:42 volumes
 ```
 docker system prune -a
 ```
-Steps to move Docker to keep images etc in another place: 
 
+
+## Steps to move Docker to keep images etc in another place: 
+```
 sudo systemctl stop docker
+```
 
-* Make your directory and provide proper permisions as above. In my case:
+Make your directory and provide proper permisions as above. In my case:
+```
 sudo mkdir /opt/docker-data
 then
 sudo mv /var/lib/docker/ /path/to/new/docker/
 or
 sudo cp -r /var/lib/docker/. /opt/docker-data
+```
 
 Edit /etc/docker/daemon.json (if it doesn't exist, create it). In recent version (>=17.03):
+```
 {
   "data-root": "/new/path/to/docker-data"
 }
-
+```
 
 sudo systemctl start docker
 
