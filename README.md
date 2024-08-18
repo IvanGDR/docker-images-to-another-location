@@ -1,9 +1,11 @@
 # docker-images-to-another-location
 
 
-* Docker in /var/lib/docker
+* Docker files to move
+```
 root@inspiron-15-3552:/var/lib/docker# ls -la
-
+```
+```
 drwx--x--x  4 root root 4096 Dec 31  2023 buildkit
 drwx--x---  5 root root 4096 Aug 17 11:15 containers
 -rw-------  1 root root   36 Dec 31  2023 engine-id
@@ -15,10 +17,12 @@ drwx------  2 root root 4096 Aug 18 19:42 runtimes
 drwx------  2 root root 4096 Dec 31  2023 swarm
 drwx------  2 root root 4096 Aug 18 19:42 tmp
 drwx-----x 25 root root 4096 Aug 18 19:42 volumes
+```
 
-***** if we do not want to move anything and start from fresh:
+> if we do not want to move anything and start from fresh:
+```
 docker system prune -a
-
+```
 Steps to move Docker to keep images etc in another place: 
 
 sudo systemctl stop docker
